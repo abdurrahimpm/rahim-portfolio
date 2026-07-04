@@ -32,24 +32,3 @@ IT Infrastructure and Digital Transformation Lead with hands-on experience in IT
 ```text
 https://abdurrahimpm.github.io/rahim-portfolio/
 ```
-
-## How to Publish
-
-1. Create a GitHub repository named `rahim-portfolio`
-2. Upload these items:
-   - `index.html`
-   - `README.md`
-   - `.gitignore`
-   - `assets/profile.jpg`
-3. Go to **Settings**
-4. Go to **Pages**
-5. Choose:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/ root`
-6. Click **Save**
-7. Wait 1-5 minutes and open the live website link.
-
-## How to Update
-
-Edit `index.html`, update project links, email, LinkedIn, and live demo URLs, then commit the changes to the `main` branch.
