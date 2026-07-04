@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdur Rahim | IT Lead Portfolio</title>
+  <meta name="description" content="IT Lead portfolio of Abdur Rahim covering IT infrastructure projects, restaurant pre-opening, networking, Microsoft 365, Intune, Business Central, store support, fiber networks, AV, biometrics, automation, AI dashboards, and software projects." />
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(255,255,255,0.08);
+      --panel2: rgba(255,255,255,0.12);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(255,255,255,0.14);
+      --blue: #38bdf8;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --pink: #fb7185;
+      --shadow: 0 22px 60px rgba(0,0,0,0.35);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(56,189,248,0.26), transparent 28rem),
+        radial-gradient(circle at 90% 8%, rgba(34,197,94,0.18), transparent 28rem),
+        radial-gradient(circle at 50% 90%, rgba(245,158,11,0.10), transparent 24rem),
+        linear-gradient(135deg, #07111f 0%, #0b1020 52%, #0d1728 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(7,17,31,0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: #06121f;
+      box-shadow: 0 14px 36px rgba(56,189,248,0.25);
+      border: 2px solid rgba(255,255,255,0.22);
+    }
+
+    .photo-logo {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    .hero {
+      padding: 74px 0 34px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      right: -110px;
+      top: -110px;
+      width: 280px;
+      height: 280px;
+      background: rgba(56,189,248,0.16);
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 5vw, 70px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      max-width: 880px;
+    }
+
+    .lead {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 850px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 850;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.08);
+      transition: transform .18s ease, background .18s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: #06121f;
+      border: none;
+    }
+
+    .btn:hover { transform: translateY(-2px); background: rgba(255,255,255,0.14); }
+
+    .hero-side {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .profile {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: #06121f;
+      font-size: 34px;
+      font-weight: 950;
+      letter-spacing: -0.08em;
+      box-shadow: 0 16px 38px rgba(0,0,0,0.32);
+      border: 3px solid rgba(255,255,255,0.20);
+    }
+
+    .profile-photo {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .profile-title {
+      margin: 18px 0 6px;
+      font-size: 28px;
+      letter-spacing: -0.04em;
+    }
+
+    .muted { color: var(--muted); line-height: 1.65; }
+    .small { font-size: 14px; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .metric {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 28px;
+      letter-spacing: -0.05em;
+      margin-bottom: 4px;
+    }
+
+    .metric span { color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+    section { padding: 34px 0; }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 3vw, 42px);
+      letter-spacing: -0.05em;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 580px;
+      line-height: 1.6;
+    }
+
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .strength {
+      padding: 20px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .strength:hover {
+      transform: translateY(-4px);
+      background: var(--panel2);
+      border-color: rgba(56,189,248,0.45);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(56,189,248,0.14);
+      border: 1px solid rgba(56,189,248,0.2);
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .strength h3, .project h3 {
+      margin: 0 0 9px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .strength p, .project p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .chips span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 750;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.06);
+      padding: 6px 8px;
+      border-radius: 999px;
+    }
+
+    .highlight {
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .highlight ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .filter {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.07);
+      color: var(--muted);
+      padding: 10px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 850;
+      font-size: 13px;
+    }
+
+    .filter.active, .filter:hover {
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: #06121f;
+      border-color: transparent;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .project {
+      min-height: 275px;
+      padding: 20px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      background: var(--panel2);
+      border-color: rgba(34,197,94,0.46);
+    }
+
+    .badge {
+      display: inline-flex;
+      width: fit-content;
+      color: #06121f;
+      background: var(--blue);
+      border-radius: 999px;
+      padding: 6px 9px;
+      font-size: 11px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .badge.green { background: var(--green); }
+    .badge.amber { background: var(--amber); }
+    .badge.pink { background: var(--pink); color: #fff; }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .project-links a {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 900;
+      border-bottom: 1px solid rgba(255,255,255,0.35);
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 34px 0 54px;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 1100px) {
+      .metrics { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 980px) {
+      nav { display: none; }
+      .hero { grid-template-columns: 1fr; padding-top: 44px; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .strength-grid, .projects { grid-template-columns: repeat(2, 1fr); }
+      .highlight { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 22px, 1160px); }
+      .hero-main { padding: 28px; }
+      .metrics, .strength-grid, .projects { grid-template-columns: 1fr; }
+      .section-title { flex-direction: column; align-items: flex-start; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <img class="logo photo-logo" src="assets/profile.jpg" alt="Abdur Rahim profile photo" />
+        <span>Abdur Rahim | IT Infrastructure & Digital Transformation Lead</span>
+      </a>
+      <nav>
+        <a href="#strengths">Strengths</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#projects">Projects</a>
+        <a href="#profile">Profile</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card hero-main">
+        <div class="eyebrow">IT Leadership • Restaurant Pre-opening • Infrastructure • Cloud • ERP • Automation</div>
+        <h1>Driving Reliable Restaurant IT Operations Through Infrastructure, Cloud, ERP, Automation, and Smart Business Systems.</h1>
+        <p class="lead">
+          I am an IT Infrastructure and Digital Transformation Lead with hands-on experience in restaurant pre-opening projects,
+          multi-store IT support, networking, Microsoft 365, Intune, Business Central, POS systems, AV solutions,
+          biometrics, automation, and AI-enabled reporting dashboards.
+        </p>
+        <div class="btn-row">
+          <a class="btn primary" href="#strengths">View Strengths</a>
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" href="https://github.com/abdurrahimpm" target="_blank" rel="noopener">GitHub</a>
+        </div>
+
+        <div class="metrics">
+          <div class="metric"><strong>30+</strong><span>IT infrastructure projects handled from planning to execution</span></div>
+          <div class="metric"><strong>60+</strong><span>Stores supported across operations</span></div>
+          <div class="metric"><strong>300+</strong><span>Direct users supported</span></div>
+          <div class="metric"><strong>1,500+</strong><span>Indirect users supported</span></div>
+          <div class="metric"><strong>Pre-opening</strong><span>Restaurant IT readiness and go-live specialist</span></div>
+        </div>
+      </div>
+
+      <aside class="card hero-side">
+        <div>
+          <img class="profile profile-photo" src="assets/profile.jpg" alt="Abdur Rahim profile photo" />
+          <h2 class="profile-title">Abdur Rahim</h2>
+          <p class="muted">
+            IT Infrastructure and Digital Transformation Lead with hands-on experience in restaurant pre-opening,
+            store infrastructure, network planning, Microsoft cloud administration, Business Central functional support,
+            restaurant systems, reporting, automation, AV systems, biometrics, and technical operations.
+          </p>
+        </div>
+        <div class="muted small">
+          <strong style="color:var(--text);">Location:</strong> UAE<br />
+          <strong style="color:var(--text);">Focus:</strong> Infrastructure, Restaurant Pre-opening, Cloud, ERP, Automation, AI Dashboards<br />
+          <strong style="color:var(--text);">GitHub:</strong> github.com/abdurrahimpm
+        </div>
+      </aside>
+    </section>
+
+    <section id="strengths">
+      <div class="section-title">
+        <h2>Key Strengths</h2>
+        <p>A complete IT profile covering infrastructure, restaurant pre-opening, networking, Microsoft administration, business applications, store support, AV, biometrics, automation, and AI projects.</p>
+      </div>
+
+      <div class="strength-grid">
+        <article class="strength">
+          <div class="icon">🏗️</div>
+          <h3>IT Infrastructure Projects</h3>
+          <p>Handled more than 30 IT infrastructure projects from planning to execution, including branch readiness, device deployment, vendor coordination, and go-live support.</p>
+          <div class="chips"><span>30+ Projects</span><span>Planning</span><span>Execution</span><span>Go-live</span></div>
+        </article>
+
+        <article class="strength">
+          <div class="icon">🍽️</div>
+          <h3>Restaurant IT Pre-opening Specialist</h3>
+          <p>Specialized in restaurant IT pre-opening activities covering network, POS, printers, signage display, CCTV coordination, Wi-Fi, AV, access systems, and operational handover.</p>
+          <div class="chips"><span>Pre-opening</span><span>Restaurant IT</span><span>POS Readiness</span><span>Handover</span></div>
+        </article>
+
+        <article class="strength">
+          <div class="icon">🌐</div>
+          <h3>Networking, VLAN, WAN & LAN</h3>
+          <p>Hands-on support for LAN/WAN environments, VLAN planning, Wi-Fi, guest Wi-Fi, mesh Wi-Fi, firewall coordination, and branch connectivity troubleshooting.</p>
+          <div class="chips"><span>VLAN</span><span>WAN</span><span>LAN</span><span>Wi-Fi</span><span>Guest Wi-Fi</span></div>
+        </article>
+
+        <article class="strength">
+          <div class="icon">☁️</div>
+          <h3>Microsoft 365 & Intune Administration</h3>
+          <p>Administration experience across Microsoft 365 users, licenses, mailbox support, device management concepts, Intune, security policies, and endpoint support.</p>
+          <div class="chips"><span>M365 Admin</span><span>Intune</span><span>Users</span><span>Licensing</span><span>Endpoint</span></div>
+        </article>
+
+        <article class="strength">
+          <div class="icon">📘</div>
+          <h3>Business Central Functional Support</h3>
+          <p>Functional support experience in Microsoft Dynamics 365 Business Central covering purchase, inventory, finance workflows, user issues, reporting, and process coordination.</p>
+          <div class="chips"><span>Business Central</span><span>ERP</span><span>Purchase</span><span>Inventory</span><span>Finance</span></div>
+        </article>
+
+        <article class="strength">
+          <div class="icon">🛠️</div>
+          <h3>IT Support Leadership</h3>
+          <p>Managing IT support for more than 60 stores, supporting 300+ direct users and 1,500+ indirect users through structured troubleshooting and escalation.</p>
+          <div class="chips"><span>60+ Stores</span><span>Helpdesk</span><span>Escalation</span><span>Operations</span></div>
+        </article>
+
+        <article class="strength">
+          <div class="icon">🔌</div>
+          <h3>Fiber Networks FTTH & NLD</h3>
+          <p>Specialist experience in fiber network environments including FTTH and NLD concepts, connectivity planning, service coordination, and field troubleshooting.</p>
+          <div class="chips"><span>FTTH</span><span>NLD</span><span>Fiber</span><span>ISP</span><span>Field Support</span></div>
+        </article>
+
+        <article class="strength">
+          <div class="icon">🎛️</div>
+          <h3>AV Systems & Meeting Rooms</h3>
+          <p>Hands-on experience with projector deployment, interactive displays, audio system planning, installation support, meeting room setup, and Microsoft Teams Rooms concepts.</p>
+          <div class="chips"><span>Projector</span><span>Interactive Display</span><span>Audio</span><span>MTR</span><span>Meeting Room</span></div>
+        </article>
+
+        <article class="strength">
+          <div class="icon">🧬</div>
+          <h3>Biometrics & Door Access</h3>
+          <p>Experience with biometric attendance solutions, door access systems, attendance integration, device support, and operational issue resolution.</p>
+          <div class="chips"><span>Biometrics</span><span>Attendance</span><span>Door Access</span><span>Device Support</span></div>
+        </article>
+
+        <article class="strength">
+          <div class="icon">📶</div>
+          <h3>Wi-Fi, Mesh & Guest Wi-Fi</h3>
+          <p>Experience in Wi-Fi setup, mesh Wi-Fi planning, customer/guest Wi-Fi configuration, access separation, and practical store-level wireless troubleshooting.</p>
+          <div class="chips"><span>Mesh Wi-Fi</span><span>Guest Wi-Fi</span><span>Customer Wi-Fi</span><span>Branch Wi-Fi</span></div>
+        </article>
+
+        <article class="strength">
+          <div class="icon">🤖</div>
+          <h3>Automation & AI Enthusiast</h3>
+          <p>Building practical automation and AI-assisted solutions, including SQL reporting dashboards, executive sales insights, QR ordering, digital menu display, and workflow alerts.</p>
+          <div class="chips"><span>Automation</span><span>AI</span><span>SQL Dashboards</span><span>Power Automate</span></div>
+        </article>
+
+        <article class="strength">
+          <div class="icon">📊</div>
+          <h3>Business Reporting & Dashboards</h3>
+          <p>Creating operational dashboards and reporting concepts that turn sales, ERP, and support data into useful insights for management and business teams.</p>
+          <div class="chips"><span>Sales Insights</span><span>Reports</span><span>SQL</span><span>Dashboards</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <div class="section-title">
+        <h2>IT Leadership Profile</h2>
+        <p>My strength is end-to-end IT ownership: from physical infrastructure and restaurant pre-opening to cloud, ERP, support, automation, and business reporting.</p>
+      </div>
+      <div class="card highlight">
+        <div>
+          <h3 style="margin:0 0 12px;">Operational Responsibilities</h3>
+          <ul>
+            <li>Handled 30+ IT infrastructure projects from planning to execution.</li>
+            <li>Restaurant IT pre-opening specialist for new branch readiness and operational go-live.</li>
+            <li>Manage IT support across 60+ stores and business locations.</li>
+            <li>Support 300+ direct users and 1,500+ indirect users.</li>
+            <li>Coordinate infrastructure, POS, network, CCTV, signage, AV, access systems, and handover activities.</li>
+            <li>Work with vendors, operations, finance, HR, and management to close technical and business issues.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin:0 0 12px;">Technical Coverage</h3>
+          <ul>
+            <li>Networking: VLAN, WAN, LAN, Wi-Fi, guest Wi-Fi, mesh Wi-Fi, branch connectivity.</li>
+            <li>Microsoft: Microsoft 365 Admin, Intune Admin, user and endpoint support.</li>
+            <li>ERP: Microsoft Dynamics 365 Business Central functional support.</li>
+            <li>Systems: POS, biometrics, attendance, door access, AV, MTR meeting room concepts.</li>
+            <li>Development: SQL dashboards, executive reports, QR ordering, digital menu, and mobile hobby projects.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects & Practical Builds</h2>
+        <p>These projects show both business problem-solving and hands-on technical capability. Replace the placeholder links with your actual GitHub repository links.</p>
+      </div>
+
+      <div class="toolbar">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="business">Business</button>
+        <button class="filter" data-filter="automation">Automation</button>
+        <button class="filter" data-filter="restaurant">Restaurant</button>
+        <button class="filter" data-filter="personal">Hobby / Personal</button>
+      </div>
+
+      <div class="projects">
+        <article class="project" data-category="business automation">
+          <div>
+            <span class="badge">SQL Dashboard</span>
+            <h3>Reporting Dashboard from SQL Database</h3>
+            <p>Business reporting concept using SQL data to produce operational insights, filters, export options, and management-friendly views.</p>
+            <div class="chips"><span>SQL</span><span>Dashboard</span><span>Reports</span><span>Excel Export</span></div>
+          </div>
+          <div class="project-links"><a href="#" target="_blank" rel="noopener">Repo</a><a href="#" target="_blank" rel="noopener">Preview</a></div>
+        </article>
+
+        <article class="project" data-category="business automation">
+          <div>
+            <span class="badge green">Executive Insights</span>
+            <h3>Executive Sales Insights Dashboard</h3>
+            <p>Management dashboard idea for high-level sales visibility, branch performance, sales trend, item movement, and executive summaries.</p>
+            <div class="chips"><span>Sales</span><span>Insights</span><span>BI</span><span>Management</span></div>
+          </div>
+          <div class="project-links"><a href="#" target="_blank" rel="noopener">Repo</a><a href="#" target="_blank" rel="noopener">Preview</a></div>
+        </article>
+
+        <article class="project" data-category="restaurant automation">
+          <div>
+            <span class="badge amber">Restaurant</span>
+            <h3>QR Based Restaurant Ordering</h3>
+            <p>QR ordering concept for digital menu, item selection, modifiers, kitchen/order flow, and future integration with POS or payment systems.</p>
+            <div class="chips"><span>QR Menu</span><span>Ordering</span><span>Restaurant</span><span>Web App</span></div>
+          </div>
+          <div class="project-links"><a href="#" target="_blank" rel="noopener">Repo</a><a href="#" target="_blank" rel="noopener">Demo</a></div>
+        </article>
+
+        <article class="project" data-category="restaurant">
+          <div>
+            <span class="badge">Live Page</span>
+            <h3>Digital Menu Display</h3>
+            <p>HTML-based menu display page hosted on GitHub Pages for easy public sharing and quick display testing.</p>
+            <div class="chips"><span>HTML</span><span>CSS</span><span>GitHub Pages</span></div>
+          </div>
+          <div class="project-links"><a href="https://github.com/abdurrahimpm/menu-display-app" target="_blank" rel="noopener">Repo</a><a href="#" target="_blank" rel="noopener">Live Demo</a></div>
+        </article>
+
+        <article class="project" data-category="personal">
+          <div>
+            <span class="badge pink">Health App</span>
+            <h3>Vital IQ Blood Pressure Monitor</h3>
+            <p>Hobby health app concept for tracking blood pressure readings, history, status, reminders, and personal health monitoring.</p>
+            <div class="chips"><span>Mobile App</span><span>Health</span><span>Tracking</span><span>Expo</span></div>
+          </div>
+          <div class="project-links"><a href="#" target="_blank" rel="noopener">Repo</a><a href="#" target="_blank" rel="noopener">APK / Demo</a></div>
+        </article>
+
+        <article class="project" data-category="personal">
+          <div>
+            <span class="badge green">Finance</span>
+            <h3>Personal Finance Management</h3>
+            <p>Personal finance app concept for accounts, cash/bank tracking, bills, fixed deposits, monthly overview, and custom app-style modals.</p>
+            <div class="chips"><span>Finance</span><span>Mobile</span><span>Expense</span><span>Planning</span></div>
+          </div>
+          <div class="project-links"><a href="#" target="_blank" rel="noopener">Repo</a><a href="#" target="_blank" rel="noopener">Demo</a></div>
+        </article>
+
+        <article class="project" data-category="personal automation">
+          <div>
+            <span class="badge amber">Task App</span>
+            <h3>Daily Task Management</h3>
+            <p>DailyTask concept for task tracking, petty cash, reimbursement, settlements, reports, and team-friendly expense workflows.</p>
+            <div class="chips"><span>Tasks</span><span>Expense</span><span>Settlement</span><span>Mobile</span></div>
+          </div>
+          <div class="project-links"><a href="#" target="_blank" rel="noopener">Repo</a><a href="#" target="_blank" rel="noopener">APK / Demo</a></div>
+        </article>
+
+        <article class="project" data-category="automation business">
+          <div>
+            <span class="badge">Workflow</span>
+            <h3>Issue Status Automation</h3>
+            <p>Power Automate workflow concept to send Teams alerts when issue status changes, including issue ID, subject, and current status.</p>
+            <div class="chips"><span>Power Automate</span><span>Teams</span><span>SharePoint</span><span>Alerts</span></div>
+          </div>
+          <div class="project-links"><a href="#" target="_blank" rel="noopener">Repo</a><a href="#" target="_blank" rel="noopener">Guide</a></div>
+        </article>
+
+        <article class="project" data-category="business restaurant">
+          <div>
+            <span class="badge green">POS Concept</span>
+            <h3>Restaurant POS System Concept</h3>
+            <p>POS concept covering table service, ordering, KOT, billing, menu management, reporting, and admin portal ideas.</p>
+            <div class="chips"><span>POS</span><span>KOT</span><span>Restaurant</span><span>Reports</span></div>
+          </div>
+          <div class="project-links"><a href="#" target="_blank" rel="noopener">Repo</a><a href="#" target="_blank" rel="noopener">Preview</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="profile">
+      <div class="section-title">
+        <h2>Professional Summary</h2>
+        <p>This wording can be used in your GitHub profile, LinkedIn summary, or CV summary section.</p>
+      </div>
+      <div class="card highlight">
+        <div>
+          <h3 style="margin:0 0 12px;">Summary</h3>
+          <p class="muted">
+            I am an IT Lead and Restaurant IT Pre-opening Specialist with strong hands-on experience across IT infrastructure projects,
+            networking, Microsoft 365, Intune, Microsoft Dynamics 365 Business Central, multi-store IT support, fiber networks,
+            AV systems, biometrics, automation, and AI-assisted business reporting. I have handled more than 30 IT infrastructure
+            projects from planning to execution and currently support technology operations across 60+ stores.
+          </p>
+        </div>
+        <div>
+          <h3 style="margin:0 0 12px;">Current Direction</h3>
+          <p class="muted">
+            I am actively building practical tools such as SQL reporting dashboards, executive sales insight dashboards,
+            QR-based restaurant ordering, digital menu display pages, health tracking apps, personal finance tools,
+            and daily task management solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+      </div>
+      <div class="card" style="padding:24px;">
+        <p class="muted" style="margin:0;">
+          <strong style="color:var(--text);">Mobile:</strong> <a href="mailto:your-email@example.com">+971 54 447 5315, +91 96 88 55 99 66</a><br />
+          <strong style="color:var(--text);">Email:</strong> <a href="mailto:your-email@example.com">mailtorahimpm@gmail.com</a><br />
+          <strong style="color:var(--text);">LinkedIn:</strong> <a href="#" target="_blank" rel="noopener">https://www.linkedin.com/in/rahimitspecialist/</a><br />
+          <strong style="color:var(--text);">GitHub:</strong> <a href="https://github.com/abdurrahimpm" target="_blank" rel="noopener">github.com/abdurrahimpm</a><br />
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Abdur Rahim. IT Infrastructure & Digital Transformation Portfolio. Built with HTML, CSS, and JavaScript. Hosted on GitHub Pages.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const filters = document.querySelectorAll(".filter");
+    const projects = document.querySelectorAll(".project");
+
+    filters.forEach((button) => {
+      button.addEventListener("click", () => {
+        filters.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+
+        const selected = button.dataset.filter;
+        projects.forEach((project) => {
+          const categories = project.dataset.category.split(" ");
+          const isVisible = selected === "all" || categories.includes(selected);
+          project.style.display = isVisible ? "flex" : "none";
+        });
+      });
+    });
+  </script>
+</body>
+</html>
