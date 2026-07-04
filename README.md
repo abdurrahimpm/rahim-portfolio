@@ -29,8 +29,6 @@ IT Infrastructure and Digital Transformation Lead with hands-on experience in IT
 
 ## Live Website
 
-After enabling GitHub Pages, your website will be available at:
-
 ```text
 https://abdurrahimpm.github.io/rahim-portfolio/
 ```
